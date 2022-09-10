@@ -1,22 +1,32 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { HomePage } from './pages/home/home.page';
-import { FolderPage } from './folder/folder.page';
-
 const routes: Routes = [
   {
     path: '',
-    component: FolderPage
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'cadastro',
-    loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    path: 'my-list',
+    loadChildren: () => import('./pages/my-list/my-list.module').then( m => m.MyListPageModule)
   },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
+  },
+  {
+    path: 'suggestions',
+    loadChildren: () => import('./pages/suggestions/suggestions.module').then( m => m.SuggestionsPageModule)
+  },
+  {
+    path: 'busca',
+    loadChildren: () => import('./pages/busca/busca.module').then( m => m.BuscaPageModule)
+  }
 ];
 
 @NgModule({

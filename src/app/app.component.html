@@ -1,5 +1,4 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
@@ -7,9 +6,12 @@
           <ion-note>Olá Visitante</ion-note>  <!--Email possível cadastro-->
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" 
-            [routerLink]="[p.url]" 
-            lines="none" detail="false" 
+            <ion-item  
+            (click)="redirect(p.url)"
+            routerDirection="root"
+            [routerLink]="[p.url]"
+            lines="none" 
+            detail="false" 
             routerLinkActive="selected">
               <ion-icon slot="start" 
               [ios]="p.icon + '-outline'" 
@@ -25,7 +27,7 @@
           <ion-toggle></ion-toggle>
         </ion-item>
     
-        <ion-button expand="block" type="search" (click)="adicionar()">Buscar</ion-button>
+        <ion-button expand="block" type="search">Buscar</ion-button>
 
         <ion-list id="labels-list">
           <ion-list-header>Tags</ion-list-header>
@@ -41,5 +43,4 @@
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
 </ion-app>
