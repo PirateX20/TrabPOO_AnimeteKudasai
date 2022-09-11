@@ -8,7 +8,7 @@
   .cnt{
     text-align: center;
   }
-  .container{
+  .rgt{
     margin-right: auto;
   }
   
@@ -16,7 +16,7 @@
 
 <ion-content>
 
-  <ion-text class="cnt">
+  <ion-text class= "cnt">
     <h1 >Bem Vindo a sua lista!</h1>
     <h2>Ainda em implementação...</h2>
   </ion-text>
@@ -26,22 +26,22 @@
   <ion-list>
     <ion-item *ngFor="let anime of meus_animes | filtro: searchItems">
       <ion-img [src]="anime.imageLink"></ion-img>
-      <ion-text>
+      <ion-text class="cnt">
         <h3>Título: {{anime.titulo}}</h3>
         <h3>Generos: {{anime.generos}}</h3>
-        <ion-button>
-          <ion-icon name="pencil"></ion-icon>
-        </ion-button>
+        <h3>Episódios Assistidos: [{{anime.assistidosEp}}/{{anime.totalEp}}]</h3>
+        <h3>Nota: {{anime.nota}}</h3>
+        <h3>Primeiro Episódio: {{anime.data}}</h3>
       </ion-text>
+      <ion-button horizontal="right" vertical="top" (click)="irParaEdicao(anime)">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 
   <div class="cnt">
     <h3>Ainda em busca de Algo? É só Buscar!</h3>
   </div>
-  <ion-button (click)="excluirAnime()">
-    Excluir!
-  </ion-button>
   <ion-button expand="block" shape="round" (click)="irParaBuscar()">
     <ion-icon name="add"></ion-icon>
         Ir Para Buscar    

@@ -16,16 +16,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/my-list/my-list.module').then( m => m.MyListPageModule)
   },
   {
-    path: 'favorites',
-    loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
-  },
-  {
-    path: 'suggestions',
-    loadChildren: () => import('./pages/suggestions/suggestions.module').then( m => m.SuggestionsPageModule)
-  },
-  {
     path: 'busca',
     loadChildren: () => import('./pages/busca/busca.module').then( m => m.BuscaPageModule)
+  },
+  {
+    path: 'editar',
+    loadChildren: () => import('./pages/editar/editar.module').then( m => m.EditarPageModule)
   }
 ];
 

@@ -12,8 +12,10 @@ export class AnimesService {
   constructor() {
     let gList1 = [" Sci-Fi", " Aliens", " Robos"];
     let gList2 = ["Adicione novas tags"];
-    let animet1 = new Anime("Darling In the FRAXX", gList1 , "../assets/images/IonicImage1.jpg");
-    let animet2 = new Anime("Teste2", gList2, "../assets/images/akame_IonicTest.jpg");
+    let animet1 = new Anime("Darling In the FRAXX", gList1,
+       "../assets/images/IonicImage1.jpg", 10, "00/00/0000", 24, 24);
+    let animet2 = new Anime("Akame Ga Kill", gList2,
+      "../assets/images/akame_IonicTest.jpg", 9, "08/08/2008", 12, 8);
     this.adicionar(animet1);
     this.adicionar(animet2);
     this.newSuggestion(animet1);
@@ -36,6 +38,8 @@ export class AnimesService {
   public newSuggestion(suggestionAnime: Anime){
     this._suggestionList.push(suggestionAnime)
   }
+  public editarAnime(anime: Anime, titulo: string, generos: string[])
+
   public excluirAnime(anime: Anime): boolean{
     for(let i=0; i<this._animeList.length; i++){
       if(this._animeList[i].id == anime.id){

@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 import { Anime } from 'src/app/models/anime';
 import { AnimesService } from 'src/app/services/animes.service';
 
+
+//suggestion e favorites vira apenas tags
+
 @Component({
   selector: 'app-my-list',
   templateUrl: './my-list.page.html',
   styleUrls: ['./my-list.page.scss'],
 })
 export class MyListPage implements OnInit {
-  anime: Anime;
   meus_animes: Anime[];
   searchItems: string = "";
 
@@ -17,8 +19,6 @@ export class MyListPage implements OnInit {
     private animeService: AnimesService,
     private router: Router,
   ) {
-    const nav = this.router.getCurrentNavigation();
-    //this.anime = nav.extras.state.objeto;
     this.meus_animes = this.animeService.animes;  
   }
 
@@ -32,9 +32,11 @@ export class MyListPage implements OnInit {
   irParaBuscar(){
     this.router.navigate(['busca']);
   }
-
-  private excluirAnime(){
-    this.animeService.excluirAnime(this.anime)
+  
+  irParaEdicao(anime: Anime){
+    this.router.navigateByUrl("/editar",
+      { state: {object: anime} }
+    )
   }
 
 }

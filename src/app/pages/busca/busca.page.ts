@@ -12,6 +12,8 @@ import { AnimesService } from 'src/app/services/animes.service';
 export class BuscaPage implements OnInit {
   formAdicionar: FormGroup;
   submited: Boolean = false;
+  genderList: string[] = ["Ação", "H-Word ( ͡° ͜ʖ ͡°)", "Robôs", "Romance", "Sci-Fi"];
+  notas: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(
     private animesService: AnimesService,
@@ -24,7 +26,10 @@ export class BuscaPage implements OnInit {
   ngOnInit() {
     this.formAdicionar = this.formBuilder.group({
       titulo: ["", [Validators.required]],
-      generos: [""],
+      generos: ["", [Validators.required]],
+      nota: [""],
+      data: [""],
+      nte: [""],
     });
   }
 
@@ -38,15 +43,31 @@ export class BuscaPage implements OnInit {
     }
   }
 
+  get errorControl(){
+    return this.formAdicionar.controls;
+  }
+
+  private validar(campo: any) : boolean{
+    if(!campo){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  public cancel(){
+    this.router.navigate(["/my-list"])
+  }
   public adicionar(){
     this.animesService.adicionar(this.formAdicionar.value);
     this.formAdicionar = this.formBuilder.group({
       titulo:[""],
       generos:[""],
-
+      nota:[""],
+      data:[""],
+      nte:[""],
     })
     this.presentAlert("AnimeteK", "Adicionar", "O anime foi adicionado a sua lista!");
-    this.router.navigate(["my-list"]);
+    this.router.navigate(["/my-list"]);
   }
 
   async presentAlert(header: string, subHeader: string, message: string) {

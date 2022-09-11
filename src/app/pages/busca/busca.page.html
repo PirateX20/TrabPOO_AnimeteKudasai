@@ -17,14 +17,41 @@
       <ion-item>
         <ion-input placeholder="Título" formControlName="titulo" type="text"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Número Total de Episódios" formControlName="nte" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="(((errorControl.titulo.touched) || (errorControl.titulo.dirty))&& errorControl.titulo.errors)">
+        <span *ngIf="errorControl.titulo.errors?.required">
+            *Campo obrigatório!!
+        </span>
+      </ion-item>
+
       <ion-item>
         <ion-select placeholder="Selecione os gêneros" [multiple]="true" formControlName="generos">
-          <ion-select-option value="Ação">Ação</ion-select-option>
-          <ion-select-option value="Espaço">Espaço</ion-select-option>
-          <ion-select-option value="Robos">Robôs</ion-select-option>
-          <ion-select-option value="Romance">Romance</ion-select-option>
+          <ion-select-option 
+            *ngFor="let gender of genderList" 
+            value="{{gender}}">{{gender}}</ion-select-option>
         </ion-select>
       </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Nota" formControlName="nota" okText="Ok">
+          <ion-select-option *ngFor="let nota of notas" value="{{nota}}">{{nota}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Data de início</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime formControlName="data" id="datetime" presentation="date"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+      </ion-item>
+
     </form>
   </ion-list>
 
@@ -34,6 +61,9 @@
 
   <ion-button (click)="adicionar()">
     <ion-icon name="add"></ion-icon>
+  </ion-button>
+  <ion-button (click)="cancelar()">
+    <ion-icon name="cancel"></ion-icon>
   </ion-button>
 
 </ion-content>

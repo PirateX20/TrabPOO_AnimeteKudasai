@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-img [src]="imageLinkEdit"></ion-img>
+      <ion-text class="cnt">
+        <h3>Título: {{tituloEdit}}</h3>
+        <h3>Generos: {{generosEdit}}</h3>
+      </ion-text>
+      <ion-button horizontal="right" vertical="bottom" (click)="excluirAnime()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <ion-button horizontal="right" vertical="top">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-button>
+    </ion-item>
+</ion-content>
