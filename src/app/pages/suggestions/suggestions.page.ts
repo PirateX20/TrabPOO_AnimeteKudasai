@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Anime } from 'src/app/models/anime';
+import { AnimesService } from 'src/app/services/animes.service';
 
 @Component({
   selector: 'app-suggestions',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./suggestions.page.scss'],
 })
 export class SuggestionsPage implements OnInit {
+  recomendations: Anime[];
 
-  constructor() { }
+  constructor(
+    private animeService: AnimesService,
+  ) { 
+    this.recomendations = this.animeService.suggestionAnimes;
+  }
 
   ngOnInit() {
   }
+
+  
 
 }

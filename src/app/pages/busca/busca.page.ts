@@ -18,7 +18,8 @@ export class BuscaPage implements OnInit {
     private alertController: AlertController,
     private formBuilder: FormBuilder,
     private router: Router,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.formAdicionar = this.formBuilder.group({

@@ -18,13 +18,18 @@
         <ion-input placeholder="Título" formControlName="titulo" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input placeholder="generos" formControlName="generos" type="text"></ion-input>
+        <ion-select placeholder="Selecione os gêneros" [multiple]="true" formControlName="generos">
+          <ion-select-option value="Ação">Ação</ion-select-option>
+          <ion-select-option value="Espaço">Espaço</ion-select-option>
+          <ion-select-option value="Robos">Robôs</ion-select-option>
+          <ion-select-option value="Romance">Romance</ion-select-option>
+        </ion-select>
       </ion-item>
     </form>
   </ion-list>
 
   <ion-item>
-    <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
+    <input type="file" name="file" id="file"><input/>  <!--(change)="onFileChanged($event)"-->
   </ion-item>
 
   <ion-button (click)="adicionar()">

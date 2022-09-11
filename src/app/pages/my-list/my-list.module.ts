@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MyListPageRoutingModule } from './my-list-routing.module';
 
 import { MyListPage } from './my-list.page';
+import { PipesModule } from 'src/app/modules/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyListPageRoutingModule
+    MyListPageRoutingModule,
+    PipesModule,
   ],
   declarations: [MyListPage]
 })
