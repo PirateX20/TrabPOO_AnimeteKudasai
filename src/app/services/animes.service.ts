@@ -8,8 +8,8 @@ export class AnimesService {
   private _animeList: Anime[] = [];
 
   constructor() {
-    let animet1 = new Anime("Teste1", "Generico");
-    let animet2 = new Anime("Teste2", "Generico");
+    let animet1 = new Anime("Darling In the FRAXX", "SciFI", "../assets/images/IonicImage1.jpg");
+    let animet2 = new Anime("Teste2", "Generico", null);
     this.adicionar(animet1);
     this.adicionar(animet2);
    }

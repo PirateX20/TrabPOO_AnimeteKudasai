@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { AnimesService } from 'src/app/services/animes.service';
 
@@ -20,7 +20,7 @@ export class BuscaPage implements OnInit {
 
   ngOnInit() {
     this.novo_anime = this.formBuilder.group({
-      nome: [""],
+      nome: ["", [Validators.required]],
       genero: [""],
     });
   }
