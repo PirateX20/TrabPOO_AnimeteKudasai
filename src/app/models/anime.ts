@@ -1,12 +1,12 @@
 export class Anime {
     private _id: any;
     private _titulo: string;
-    private _generos: string; //corrigir para array
+    private _generos: string[]; //corrigir para array
     private _imageLink: string; //Link para imagem
 
     constructor(
         titulo: string,
-        generos: string,
+        generos: string[],
         imageLink: string,
     ){
         this._titulo = titulo;
@@ -23,10 +23,10 @@ export class Anime {
     public set titulo(titulo: string){
         this._titulo = titulo;
     }
-    public get generos(): string{
+    public get generos(): string[]{
         return this._generos;
     }
-    public set generos(generos: string){
+    public set generos(generos: string[]){
         this._generos = generos;
     }
     public get imageLink(): string{
