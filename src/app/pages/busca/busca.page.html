@@ -52,12 +52,12 @@
           </ion-modal>
       </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Link da Imagem" formControlName="imageLink" type="string"></ion-input>
+      </ion-item>
+
     </form>
   </ion-list>
-
-  <ion-item>
-    <input type="file" name="file" id="file"><input/>  <!--(change)="onFileChanged($event)"-->
-  </ion-item>
 
   <ion-button (click)="adicionar()">
     <ion-icon name="add"></ion-icon>

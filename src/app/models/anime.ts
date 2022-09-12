@@ -1,7 +1,7 @@
 export class Anime {
     private _id: any;
     private _titulo: string;
-    private _generos: string[]; //corrigir para array
+    private _generos: string[]; 
     private _imageLink: string; //Link para imagem
     private _nota: number;
     private _data: string;

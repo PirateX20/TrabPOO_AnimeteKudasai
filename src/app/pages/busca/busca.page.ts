@@ -30,6 +30,7 @@ export class BuscaPage implements OnInit {
       nota: [""],
       data: [""],
       nte: [""],
+      imageLink: [""],
     });
   }
 
@@ -58,13 +59,14 @@ export class BuscaPage implements OnInit {
     this.router.navigate(["/my-list"])
   }
   public adicionar(){
-    this.animesService.adicionar(this.formAdicionar.value);
+    this.animesService.adicionarAnime(this.formAdicionar.value);
     this.formAdicionar = this.formBuilder.group({
       titulo:[""],
       generos:[""],
       nota:[""],
       data:[""],
       nte:[""],
+      imageLink:[""],
     })
     this.presentAlert("AnimeteK", "Adicionar", "O anime foi adicionado a sua lista!");
     this.router.navigate(["/my-list"]);

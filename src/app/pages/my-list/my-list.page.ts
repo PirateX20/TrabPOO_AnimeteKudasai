@@ -19,7 +19,7 @@ export class MyListPage implements OnInit {
     private animeService: AnimesService,
     private router: Router,
   ) {
-    this.meus_animes = this.animeService.animes;  
+    this.meus_animes = this.animeService.animes;
   }
 
   ngOnInit() {

@@ -16,15 +16,15 @@ export class AnimesService {
        "../assets/images/IonicImage1.jpg", 10, "00/00/0000", 24, 24);
     let animet2 = new Anime("Akame Ga Kill", gList2,
       "../assets/images/akame_IonicTest.jpg", 9, "08/08/2008", 12, 8);
-    this.adicionar(animet1);
-    this.adicionar(animet2);
+    
+    this.adicionarAnime(animet1);
+    this.adicionarAnime(animet2);
     this.newSuggestion(animet1);
    }
 
   public get genderList(): string[]{
     return this._genderList;
   }
-
   public get animes(): Anime[]{
     return this._animeList;
   }
@@ -32,9 +32,10 @@ export class AnimesService {
     return this._suggestionList;
   }
 
-  public adicionar(anime: Anime){
+  public adicionarAnime(anime: Anime){
     this._animeList.push(anime);
   }
+
   public newSuggestion(suggestionAnime: Anime){
     this._suggestionList.push(suggestionAnime)
   }
