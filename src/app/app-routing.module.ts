@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/my-list/my-list.module').then( m => m.MyListPageModule)
   },
   {
-    path: 'busca',
-    loadChildren: () => import('./pages/busca/busca.module').then( m => m.BuscaPageModule)
+    path: 'adicionar',
+    loadChildren: () => import('./pages/adicionar/adicionar.module').then( m => m.AdicionarPageModule)
   },
   {
     path: 'editar',

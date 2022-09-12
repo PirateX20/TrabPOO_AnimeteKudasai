@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BuscaPageRoutingModule } from './busca-routing.module';
+import { AdicionarPageRoutingModule } from './adicionar-routing.module';
 
-import { BuscaPage } from './busca.page';
+import { AdicionarPage } from './adicionar.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BuscaPageRoutingModule,
+    AdicionarPageRoutingModule,
     ReactiveFormsModule,
   ],
-  declarations: [BuscaPage]
+  declarations: [AdicionarPage]
 })
-export class BuscaPageModule {}
+export class AdicionarPageModule {}

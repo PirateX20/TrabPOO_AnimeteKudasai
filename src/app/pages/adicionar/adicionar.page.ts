@@ -6,10 +6,10 @@ import { AnimesService } from 'src/app/services/animes.service';
 
 @Component({
   selector: 'app-busca',
-  templateUrl: './busca.page.html',
-  styleUrls: ['./busca.page.scss'],
+  templateUrl: './adicionar.page.html',
+  styleUrls: ['./adicionar.page.scss'],
 })
-export class BuscaPage implements OnInit {
+export class AdicionarPage implements OnInit {
   formAdicionar: FormGroup;
   submited: Boolean = false;
   genderList: string[] = ["Ação", "H-Word ( ͡° ͜ʖ ͡°)", "Robôs", "Romance", "Sci-Fi"];

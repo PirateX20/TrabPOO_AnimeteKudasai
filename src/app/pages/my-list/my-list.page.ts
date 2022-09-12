@@ -30,7 +30,7 @@ export class MyListPage implements OnInit {
   }
 
   irParaAdicionar(){
-    this.router.navigate(['busca']);
+    this.router.navigate(['adicionar']);
   }
   
   irParaEdicao(anime: Anime){

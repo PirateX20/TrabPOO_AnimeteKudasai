@@ -18,10 +18,9 @@
 
   <ion-text class= "cnt">
     <h1 >Bem Vindo a sua lista!</h1>
-    <h2>Ainda em implementação...</h2>
   </ion-text>
 
-  <ion-searchbar (ionChange)="searchMyAnime( $event)"></ion-searchbar>
+  <ion-searchbar (ionChange)="searchMyAnime( $event )"></ion-searchbar>
 
   <ion-list>
     <ion-item *ngFor="let anime of meus_animes | filtro: searchItems">
@@ -45,7 +44,11 @@
   <div class="cnt">
     <h3>Ainda em busca de Algo? É só Buscar!</h3>
   </div>
-  <ion-button expand="block" shape="round" (click)="irParaAdicionar()">
-    Novo Anime
-  </ion-button>
+
+  <ion-fab vertical="bottom" horizontal="left" slot="fixed">
+    <ion-button expand="full" shape="round" (click)="irParaAdicionar()">
+      Novo Anime
+    </ion-button>
+  </ion-fab>
+
 </ion-content>

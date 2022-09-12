@@ -15,11 +15,7 @@
   <ion-list>
     <form [formGroup]="formAdicionar" (ngSubmit)="submitForm()">
       <ion-item>
-        <ion-input placeholder="Título" formControlName="titulo" type="text"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input placeholder="Número Total de Episódios" formControlName="nte" type="number"></ion-input>
+        <ion-input placeholder="*Título" formControlName="titulo" type="text"></ion-input>
       </ion-item>
 
       <ion-item *ngIf="(((errorControl.titulo.touched) || (errorControl.titulo.dirty))&& errorControl.titulo.errors)">
@@ -29,11 +25,21 @@
       </ion-item>
 
       <ion-item>
-        <ion-select placeholder="Selecione os gêneros" [multiple]="true" formControlName="generos">
+        <ion-input placeholder="Número Total de Episódios" formControlName="nte" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="*Selecione os gêneros" [multiple]="true" formControlName="generos">
           <ion-select-option 
             *ngFor="let gender of genderList" 
             value="{{gender}}">{{gender}}</ion-select-option>
         </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="(((errorControl.generos.touched) || (errorControl.generos.dirty))&& errorControl.generos.errors)">
+        <span *ngIf="errorControl.generos.errors?.required">
+            *Campo obrigatório!!
+        </span>
       </ion-item>
 
       <ion-item>
@@ -63,7 +69,7 @@
     <ion-icon name="add"></ion-icon>
   </ion-button>
   <ion-button (click)="cancelar()">
-    <ion-icon name="cancel"></ion-icon>
+    <ion-icon name="check-mark"></ion-icon>
   </ion-button>
 
 </ion-content>
