@@ -29,7 +29,8 @@ export class AdicionarPage implements OnInit {
       generos: ["", [Validators.required]],
       nota: [""],
       data: [""],
-      nte: [""],
+      totalEp: [""],
+      assistidosEp: [""],
       imageLink: [""],
     });
   }
@@ -65,7 +66,8 @@ export class AdicionarPage implements OnInit {
       generos:[""],
       nota:[""],
       data:[""],
-      nte:[""],
+      totalEp:[""],
+      assistidosEp:[""],
       imageLink:[""],
     })
     this.presentAlert("AnimeteK", "Adicionar", "O anime foi adicionado a sua lista!");

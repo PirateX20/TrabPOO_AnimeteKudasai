@@ -25,7 +25,10 @@
       </ion-item>
 
       <ion-item>
-        <ion-input placeholder="Número Total de Episódios" formControlName="nte" type="number"></ion-input>
+        <ion-input placeholder="Número Total de Episódios" formControlName="totalEp" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Número de Episódios Assistidos" formControlName="assistidosEp" type="number"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -69,7 +72,7 @@
     <ion-icon name="add"></ion-icon>
   </ion-button>
   <ion-button (click)="cancelar()">
-    <ion-icon name="check-mark"></ion-icon>
+    <ion-icon name="close-outline"></ion-icon>
   </ion-button>
 
 </ion-content>
