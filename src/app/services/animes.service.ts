@@ -38,7 +38,20 @@ export class AnimesService {
   public newSuggestion(suggestionAnime: Anime){
     this._suggestionList.push(suggestionAnime)
   }
-  public editarAnime(anime: Anime, titulo: string, generos: string[])
+  public editarAnime(anime: Anime, titulo: string, generos: string[],
+    imageLink: string, totapEp: number, assistidosEp: number): boolean{
+    for(let i=0; i<this._animeList.length; i++){
+        if(this._animeList[i].id == anime.id){
+          this._animeList[i].titulo = titulo;
+          this._animeList[i].generos = generos;
+          this._animeList[i].imageLink = imageLink;
+          this._animeList[i].totalEp = totapEp;
+          this._animeList[i].assistidosEp = assistidosEp;
+          return true;
+      }
+    }
+    return false;
+  }
 
   public excluirAnime(anime: Anime): boolean{
     for(let i=0; i<this._animeList.length; i++){

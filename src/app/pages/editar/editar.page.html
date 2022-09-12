@@ -5,17 +5,40 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
-      <ion-img [src]="imageLinkEdit"></ion-img>
-      <ion-text class="cnt">
-        <h3>Título: {{tituloEdit}}</h3>
-        <h3>Generos: {{generosEdit}}</h3>
-      </ion-text>
-      <ion-button horizontal="right" vertical="bottom" (click)="excluirAnime()">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-      <ion-button horizontal="right" vertical="top">
-        <ion-icon name="pencil"></ion-icon>
-      </ion-button>
-    </ion-item>
+  <ion-list>
+      <ion-item>
+        <ion-input placeholder="Título" [(ngModel)]="tituloEdit" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Número Total de Episódios" [(ngModel)]="totalEpEdit" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Selecione os gêneros" [multiple]="true" [(ngModel)]="generosEdit">
+          <ion-select-option 
+            *ngFor="let gender of genderList" 
+            value="{{gender}}">{{gender}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Nota" [(ngModel)]="notaEdit" okText="Ok">
+          <ion-select-option *ngFor="let nota of notas" value="{{nota}}">{{nota}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Data de início</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime [(ngModel)]="dataEdit" id="datetime" presentation="date"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+      </ion-item>
+  </ion-list>
+  <ion-button (click)="animeEdition()">
+    <ion-icon name="confirm"></ion-icon>
+  </ion-button>
 </ion-content>

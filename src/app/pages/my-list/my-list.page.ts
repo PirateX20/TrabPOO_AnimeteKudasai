@@ -29,7 +29,7 @@ export class MyListPage implements OnInit {
     this.searchItems = event.detail.value;
   }
 
-  irParaBuscar(){
+  irParaAdicionar(){
     this.router.navigate(['busca']);
   }
   

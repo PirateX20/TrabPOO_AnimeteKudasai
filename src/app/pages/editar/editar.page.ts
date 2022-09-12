@@ -33,7 +33,7 @@ export class EditarPage implements OnInit {
     this.assistidosEpEdit = this.animeEdit.assistidosEp;
   }
 
-  public editarAnime(){
+  public animeEdition(){
     if(
       this.validar(this.tituloEdit) &&
       this.validar(this.generosEdit) &&
@@ -41,7 +41,11 @@ export class EditarPage implements OnInit {
       this.validar(this.totalEpEdit) &&
       this.validar(this.assistidosEpEdit)
     ){
-      if(this.animeService.editar(this.animeEdit, this.tituloEdit, this.generosEdit,))
+      if(this.animeService.editarAnime(this.animeEdit, this.tituloEdit,
+        this.generosEdit, this.imageLinkEdit, this.totalEpEdit, this.assistidosEpEdit)){
+        this.router.navigate(["/my-list"]);
+
+      }
     }
   }
 
